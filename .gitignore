@@ -6,7 +6,6 @@
 /out-tsc
 /bazel-out
 /vercel
-/netlify
 
 # Node
 /node_modules
@@ -42,3 +41,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Local Netlify folder
+.netlify
