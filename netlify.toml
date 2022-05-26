@@ -1,0 +1,6 @@
+[build]
+  command = "npm run platform:netlify:build"
+  publish = "netlify/wookieapi-v5/browser"
+
+[[plugins]]
+  package = "@netlify/plugin-angular-universal"

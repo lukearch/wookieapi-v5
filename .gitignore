@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 /vercel
+/netlify
 
 # Node
 /node_modules
