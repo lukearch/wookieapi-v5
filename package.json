@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:dev": "ng build",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run wookieapi-v5:serve-ssr",
@@ -14,7 +14,8 @@
     "lint": "npx eslint src/**/*.{ts,html,scss} --quiet --fix",
     "format": "npx prettier src/**/*.{ts,html,scss} --write",
     "prepare": "husky install",
-    "platform:vercel:build": "ng build --output-path vercel/wookieapi-v5/browser --configuration production --progress && ng run wookieapi-v5:server --output-path vercel/wookieapi-v5/server --configuration production --progress"
+    "platform:vercel:build": "ng build --output-path vercel/wookieapi-v5/browser --configuration production --progress && ng run wookieapi-v5:server --output-path vercel/wookieapi-v5/server --configuration production --progress",
+    "platform:heroku:build": "ng build --output-path heroku/wookieapi-v5/browser --configuration production --progress && ng run wookieapi-v5:server --output-path heroku/wookieapi-v5/server --configuration production --progress"
   },
   "private": true,
   "dependencies": {
