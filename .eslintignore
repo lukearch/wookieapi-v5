@@ -1,3 +1,4 @@
 .vscode
 src/**/*.spec.ts
 src/*.ts
+src/*.scss
