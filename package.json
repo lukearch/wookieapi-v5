@@ -15,7 +15,7 @@
     "format": "npx prettier src/**/*.{ts,html,scss} --write",
     "prepare": "husky install",
     "platform:vercel:build": "ng build --output-path vercel/wookieapi-v5/browser --configuration production --progress && ng run wookieapi-v5:server --output-path vercel/wookieapi-v5/server --configuration production --progress",
-    "platform:heroku:build": "ng build --output-path heroku/wookieapi-v5/browser --configuration production --progress && ng run wookieapi-v5:server --output-path heroku/wookieapi-v5/server --configuration production --progress"
+    "platform:netlify:build": "ng build --output-path netlify/wookieapi-v5/browser --configuration production --progress && ng run wookieapi-v5:server --output-path netlify/wookieapi-v5/server --configuration production --progress"
   },
   "private": true,
   "dependencies": {
