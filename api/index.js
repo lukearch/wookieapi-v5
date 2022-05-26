@@ -1,3 +1,4 @@
-import { app } from '../dist/wookieapi-v5/server/main'
+const server = require('../vercel/wookieapi-v5/server/main');
+console.log(server);
 
-export default app()
+module.exports = server.app();
