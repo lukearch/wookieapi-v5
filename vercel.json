@@ -10,7 +10,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/wookieapi-v5/browser/**"
+      "includeFiles": "vercel/wookieapi-v5/browser/**"
     }
   }
 }
