@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run wookieapi-v5:serve-ssr",
@@ -13,7 +13,8 @@
     "prerender": "ng run wookieapi-v5:prerender",
     "lint": "npx eslint src/**/*.{ts,html,scss} --quiet --fix",
     "format": "npx prettier src/**/*.{ts,html,scss} --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "platform:vercel:build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
