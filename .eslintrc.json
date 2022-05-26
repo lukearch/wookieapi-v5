@@ -38,7 +38,8 @@
             "ignoreMemberSort": false,
             "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
           }
-        ]
+        ],
+        "no-trailing-spaces": "off"
       }
     },
     {
