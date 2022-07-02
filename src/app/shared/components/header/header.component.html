@@ -1,21 +1,21 @@
 <div class="header">
-  <div class="header--navbar">
-    <div class="header--navbar--logo">
-      <div class="header--navbar--logo--image"></div>
-      <div class="header--navbar--logo--content">developer</div>
+  <app-container>
+    <div class="header--navbar">
+      <div class="header--navbar--logo">
+        <div class="header--navbar--logo--image"></div>
+        <div class="header--navbar--logo--content">developer</div>
+      </div>
+      <div *ngIf="device === 'desktop'" class="header--navbar--links">
+        <ng-template ngFor let-link [ngForOf]="links">
+          <app-link [link]="link"></app-link>
+        </ng-template>
+      </div>
+      <div class="header--navbar--menu-button" *ngIf="device === 'mobile'">
+        <app-menu-button
+          [isActive]="menuOpen"
+          (click)="toggleMenu()"
+        ></app-menu-button>
+      </div>
     </div>
-    <div class="header--navbar--links">
-      <ng-template ngFor let-link [ngForOf]="links">
-        <a
-          *ngIf="!link.external"
-          [routerLink]="link.route"
-          [class.active]="link.route === route"
-          >{{ link.name }}</a
-        >
-        <a [href]="link.route" target="_blank" *ngIf="link.external">{{
-          link.name
-        }}</a>
-      </ng-template>
-    </div>
-  </div>
+  </app-container>
 </div>

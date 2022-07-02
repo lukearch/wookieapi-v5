@@ -1,10 +1,11 @@
-:root {
-  // colors
-  --background: #282c34;
-  --primary: #44ffd1;
-  --white: #ffff;
-  --light-gray: #d9d9d9;
+// colors
+$background: #282c34;
+$primary: #44ffd1;
+$white: #ffff;
+$light-gray: #d9d9d9;
 
-  // values
-  --transition-duration: 0.3s;
-}
+// values
+$transition-duration: 0.3s;
+$max-content-width: 1440px;
+$mobile-content-width: 768px;
+$menu-width: 250px;

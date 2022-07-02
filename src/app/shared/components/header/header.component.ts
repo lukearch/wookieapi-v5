@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
+import { links } from '../../../../data/link'
+import { Link } from '../../interfaces/link'
+import { DevicesService } from '../../services/devices.service'
 
 @Component({
   selector: 'app-header',
@@ -8,31 +11,32 @@ import { NavigationEnd, Router } from '@angular/router'
 })
 export class HeaderComponent implements OnInit {
   public route: string
-  public links = [
-    {
-      name: 'Home',
-      route: '/',
-      external: false
-    },
-    {
-      name: 'Documentation',
-      route: '/documentation',
-      external: false
-    },
-    {
-      name: 'About',
-      route: '/about',
-      external: false
-    },
-    {
-      name: 'Github',
-      route: 'https://github.com/lukearch',
-      external: true
-    }
-  ]
+  public device: string
+  public menuOpen: boolean
+  public links: Link[]
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private devicesService: DevicesService) {
     this.route = ''
+    this.device = ''
+    this.links = links
+    this.menuOpen = false
+    this.device = this.devicesService.device
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.device = this.devicesService.device
+
+    if (this.devicesService.device === 'desktop') {
+      const page = document.getElementById('page')
+      const sideMenu = document.getElementById('side-menu')
+
+      if (page && sideMenu) {
+        page.classList.remove('menu-active')
+        sideMenu.classList.remove('menu-active')
+        this.menuOpen = false
+      }
+    }
   }
 
   ngOnInit(): void {
@@ -45,5 +49,15 @@ export class HeaderComponent implements OnInit {
         this.route = route.url
       }
     })
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen
+    const page = document.getElementById('page')
+    const sideMenu = document.getElementById('side-menu')
+    if (page && sideMenu) {
+      page.classList.toggle('menu-active')
+      sideMenu.classList.toggle('menu-active')
+    }
   }
 }
