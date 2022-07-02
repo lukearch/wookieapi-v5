@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/functions.scss';
+@import './styles/variables.scss';
 
 * {
   margin: 0;
@@ -10,4 +11,42 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all var(--transition-duration) ease-out;
+
+  &.active {
+    color: var(--primary);
+
+    &:after {
+      width: 100%;
+      background-color: var(--primary);
+    }
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    display: block;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 5px;
+    transition: all var(--transition-duration) ease-out;
+  }
+
+  &:hover {
+    color: var(--primary);
+
+    &:after {
+      width: 100%;
+      background-color: var(--primary);
+    }
+  }
 }

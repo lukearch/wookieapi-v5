@@ -1,0 +1,50 @@
+@import '../../../../styles/functions.scss';
+
+:host {
+  .header {
+    padding: rem(16);
+
+    &--navbar {
+      display: flex;
+      align-items: center;
+
+      &--logo {
+        display: flex;
+        align-items: center;
+
+        &--image {
+          background-color: var(--light-gray);
+          width: rem(170);
+          height: rem(60);
+        }
+
+        &--content {
+          margin-left: rem(10);
+          font-size: rem(16);
+          font-weight: bold;
+          color: var(--white);
+          font-family: 'Montserrat', sans-serif;
+          text-transform: uppercase;
+
+          &:after {
+            content: '';
+            border: 1px solid var(--white);
+            margin: 0 rem(10);
+          }
+        }
+      }
+
+      &--links {
+        display: flex;
+
+        a {
+          margin-right: rem(10);
+
+          &:last-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

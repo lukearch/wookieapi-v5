@@ -1,5 +1,6 @@
 .vscode
 src/**/*.spec.ts
+src/**/*.scss
 src/*.ts
 src/*.scss
 api

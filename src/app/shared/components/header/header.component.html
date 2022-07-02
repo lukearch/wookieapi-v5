@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="header--navbar">
+    <div class="header--navbar--logo">
+      <div class="header--navbar--logo--image"></div>
+      <div class="header--navbar--logo--content">developer</div>
+    </div>
+    <div class="header--navbar--links">
+      <ng-template ngFor let-link [ngForOf]="links">
+        <a
+          *ngIf="!link.external"
+          [routerLink]="link.route"
+          [class.active]="link.route === route"
+          >{{ link.name }}</a
+        >
+        <a [href]="link.route" target="_blank" *ngIf="link.external">{{
+          link.name
+        }}</a>
+      </ng-template>
+    </div>
+  </div>
+</div>
