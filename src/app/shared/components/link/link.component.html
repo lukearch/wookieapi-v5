@@ -1,0 +1,41 @@
+<a class="link" *ngIf="link.external" [href]="link.route" target="_blank">{{
+  link.name
+}}</a>
+
+<a
+  class="link"
+  *ngIf="!link.external && !link.sublinks"
+  [routerLink]="link.route"
+  [class.active]="link.route === currentRoute"
+  >{{ link.name }}</a
+>
+
+<a
+  class="link"
+  *ngIf="!link.external && link.sublinks && device === 'desktop'"
+  [class.active]="link.route === currentRoute"
+  [routerLink]="link.route"
+>
+  {{ link.name }}
+</a>
+
+<div
+  *ngIf="!link.external && link.sublinks && device === 'mobile'"
+  class="dropdown"
+  [class.open]="isOpen"
+>
+  <span
+    [style.opacity]="isOpen ? 1 : '0.5'"
+    class="link"
+    (click)="openDropdown(dropdown)"
+    >{{ link.name }}</span
+  >
+
+  <div #dropdown class="dropdown--content" [class.open]="isOpen">
+    <div class="dropdown--content--links">
+      <ng-template ngFor let-sublink [ngForOf]="link.sublinks">
+        <app-link [link]="sublink"></app-link>
+      </ng-template>
+    </div>
+  </div>
+</div>

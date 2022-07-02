@@ -1,0 +1,10 @@
+<div id="side-menu" class="menu">
+  <div class="menu--content">
+    <div class="menu--content--logo"></div>
+    <div class="menu--content--links">
+      <ng-template ngFor let-link [ngForOf]="links">
+        <app-link [link]="link"></app-link>
+      </ng-template>
+    </div>
+  </div>
+</div>

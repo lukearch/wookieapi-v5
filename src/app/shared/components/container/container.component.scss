@@ -1,0 +1,8 @@
+@import '../../../../styles/base.scss';
+
+:host {
+  .container {
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}
