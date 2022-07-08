@@ -1,0 +1,36 @@
+@import '../../../../styles/base.scss';
+
+:host {
+  .button {
+    cursor: pointer;
+    width: fit-content;
+
+    &--line {
+      width: rem(35);
+      height: rem(5);
+      background-color: $white;
+      margin: rem(6) 0;
+      transition: all $transition-duration ease-out;
+
+      &:nth-child(1) {
+        &.active {
+          -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+          transform: rotate(-45deg) translate(-9px, 6px);
+        }
+      }
+
+      &:nth-child(2) {
+        &.active {
+          opacity: 0;
+        }
+      }
+
+      &:nth-child(3) {
+        &.active {
+          -webkit-transform: rotate(45deg) translate(-8px, -8px);
+          transform: rotate(45deg) translate(-8px, -8px);
+        }
+      }
+    }
+  }
+}

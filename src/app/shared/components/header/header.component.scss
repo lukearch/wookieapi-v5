@@ -1,0 +1,67 @@
+@import '../../../../styles/base.scss';
+
+:host {
+  .header {
+    padding: rem(16);
+
+    &--navbar {
+      display: flex;
+      align-items: center;
+
+      &--logo {
+        display: flex;
+        align-items: center;
+
+        &--image {
+          background-color: $light-gray;
+          width: rem(170);
+          height: rem(60);
+
+          @media screen and (max-width: $mobile-content-width) {
+            width: rem(120);
+            height: rem(40);
+          }
+        }
+
+        &--content {
+          margin-left: rem(10);
+          font-size: rem(16);
+          font-weight: bold;
+          color: $white;
+          font-family: 'Montserrat', sans-serif;
+          text-transform: uppercase;
+
+          &:after {
+            content: '';
+            border: 1px solid $white;
+            margin: 0 rem(10);
+
+            @media screen and (max-width: $mobile-content-width) {
+              display: none;
+            }
+          }
+
+          @media screen and (max-width: $mobile-content-width) {
+            font-size: rem(12);
+          }
+        }
+      }
+
+      &--links {
+        display: flex;
+
+        app-link {
+          margin-right: rem(10);
+
+          &:last-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &--menu-button {
+        margin-left: auto;
+      }
+    }
+  }
+}

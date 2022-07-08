@@ -1,0 +1,46 @@
+@use 'sass:color';
+@import '../../../../styles/base.scss';
+
+:host {
+  .menu {
+    position: fixed;
+    width: $menu-width;
+    height: 100vh;
+    background-color: color.scale($background, $lightness: -10%);
+    top: 0;
+    right: -#{$menu-width};
+    transition: all $transition-duration ease-out;
+
+    &.menu-active {
+      right: 0;
+    }
+    &--content {
+      width: 100%;
+      padding: rem(16);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &--logo {
+        width: rem(120);
+        height: rem(40);
+        margin-bottom: rem(32);
+        background-color: $light-gray;
+      }
+
+      &--links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        app-link {
+          margin-bottom: rem(5);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

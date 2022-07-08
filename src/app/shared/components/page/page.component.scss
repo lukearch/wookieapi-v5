@@ -1,0 +1,17 @@
+@import '../../../../styles/base.scss';
+
+:host {
+  #page {
+    transition: transform $transition-duration ease-out;
+    position: relative;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.menu-active {
+      transform: translate3d(-$menu-width, 0, 0);
+    }
+  }
+}
